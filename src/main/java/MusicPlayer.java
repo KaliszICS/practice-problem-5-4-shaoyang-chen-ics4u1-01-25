@@ -45,7 +45,7 @@ public class MusicPlayer implements Player{
                 break;
             }
         }
-        currentSong = musicList[pos++];
+        currentSong = musicList[++pos];
     }
     public void previous(){
         int pos = 0;
@@ -55,7 +55,7 @@ public class MusicPlayer implements Player{
                 break;
             }
         }
-        currentSong = musicList[pos--];
+        currentSong = musicList[--pos];
     }
     public String getCurrentSong(){
         return currentSong;

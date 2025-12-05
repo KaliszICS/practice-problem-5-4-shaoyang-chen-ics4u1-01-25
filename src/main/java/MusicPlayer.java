@@ -7,6 +7,7 @@ public class MusicPlayer implements Player{
         this.volume = 0;
         this.onOff = false;
         this.currentSong = "";
+        this.musicList = new String[mL.length];
         for (int i = 0; i < mL.length; i++) {
             this.musicList[i] = mL[i];
         }
@@ -41,6 +42,7 @@ public class MusicPlayer implements Player{
         for(int i = 0; i < musicList.length; i++){
             if(musicList[i].equals(currentSong)){
                 pos = i;
+                break;
             }
         }
         currentSong = musicList[pos++];
@@ -50,6 +52,7 @@ public class MusicPlayer implements Player{
         for(int i = 0; i < musicList.length; i++){
             if(musicList[i].equals(currentSong)){
                 pos = i;
+                break;
             }
         }
         currentSong = musicList[pos--];

@@ -3,13 +3,16 @@ public class RadioPlayer implements Player{
     private double[] stationList;
     private int volume;
     private double station;
-    public RadioPlayer(double[] sl){
-        for (int i = 0; i < sl.length; i++) {
-            stationList[i] = sl[i];
+    private int pos;
+    public RadioPlayer(double[] stationList){
+        this.stationList = new double[stationList.length];
+        for (int i = 0; i < stationList.length; i++) {
+            this.stationList[i] = stationList[i];
         }
         volume = 0;
         station = 0;
         onOff = false;
+        pos = 0;
     }
     @Override
     public void start() {
@@ -37,22 +40,22 @@ public class RadioPlayer implements Player{
         return volume;
     }
     public void next(){
-        int pos = -2;
         for(int i = 0; i < stationList.length; i++){
-            if(stationList[i] == station){
-                pos = i;
+            if(station == stationList[i]){
+                this.pos = i;
+                break;
             }
         }
-        station = stationList[pos++];
+        station = stationList[this.pos++];
     }
     public void previous(){
-        int pos = -2;
         for(int i = 0; i < stationList.length; i++){
-            if(stationList[i] == station){
-                pos = i;
+            if(station == stationList[i]){
+                this.pos = i;
+                break;
             }
         }
-        station = stationList[pos--];
+        station = stationList[this.pos--];
     }
     public double getStation(){
         return station;

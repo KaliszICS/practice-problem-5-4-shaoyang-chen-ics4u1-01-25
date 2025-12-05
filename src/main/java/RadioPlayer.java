@@ -46,7 +46,7 @@ public class RadioPlayer implements Player{
                 break;
             }
         }
-        station = stationList[this.pos++];
+        station = stationList[++this.pos];
     }
     public void previous(){
         for(int i = 0; i < stationList.length; i++){
@@ -55,7 +55,7 @@ public class RadioPlayer implements Player{
                 break;
             }
         }
-        station = stationList[this.pos--];
+        station = stationList[--this.pos];
     }
     public double getStation(){
         return station;

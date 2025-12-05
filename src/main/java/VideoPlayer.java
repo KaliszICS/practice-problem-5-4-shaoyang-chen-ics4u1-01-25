@@ -17,7 +17,7 @@ public class VideoPlayer implements Player{
     public void stop(){
         this.onOff = false;
     }
-    boolean getOnOff(){
+    public boolean getOnOff(){
         return this.onOff;
     }
     @Override
